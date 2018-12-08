@@ -3,25 +3,25 @@ output:
   html_document: default
   word_document: default
 ---
-# ProduÁ„o de gr·ficos com ![R](http://developer.r-project.org/Logo/Rlogo-5.png)
-## TÛpico: SomatÛrio de ondas harmÙnicas.
+# Produ√ß√£o de gr√°ficos com ![R](http://developer.r-project.org/Logo/Rlogo-5.png)
+## T√≥pico: Somat√≥rio de ondas harm√¥nicas.
 
 
-![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png)
+![plot of Batimento](images/Batimento1.png)
 
 
-**Resumo:** AtravÈs deste trabalho mostro como trabalhar v·rias funÁıes e como implementar tÈcnicas r·pidas e simples de programaÁ„o, utilizando a linguaguem R, e ao mesmo tempo dando uma noÁ„o de como formar ondas harmÙnicas atravÈs de dados e ao final produzindo gr·ficos que mostram o comportamento destas ondas.
+**Resumo:** Atrav√©s deste trabalho mostro como trabalhar v√°rias fun√ß√µes e como implementar t√©cnicas r√°pidas e simples de programa√ß√£o, utilizando a linguaguem R, e ao mesmo tempo dando uma no√ß√£o de como formar ondas harm√¥nicas atrav√©s de dados e ao final produzindo gr√°ficos que mostram o comportamento destas ondas.
 
-### Aprendendo programaÁ„o em R e como pensar a teoria das ondas cl·ssicas.
+### Aprendendo programa√ß√£o em R e como pensar a teoria das ondas cl√°ssicas.
 
-- Decidi fazer um passo a passo de como programar em R, para exibiÁ„o de gr·ficos de ondas harmÙnicas. Para leitura deste artigo, n„o È necess·rio entender nenhum desses conceitos, mas toda informaÁ„o prÈvia È muito bem utilizada. 
+- Decidi fazer um passo a passo de como programar em R, para exibi√ß√£o de gr√°ficos de ondas harm√¥nicas. Para leitura deste artigo, n√£o √© necess√°rio entender nenhum desses conceitos, mas toda informa√ß√£o pr√©via √© muito bem utilizada. 
 
 
-### Gerando o gr·fico mais simples 
+### Gerando o gr√°fico mais simples 
 
-- Utilizando RStudio, vamos mostrar como fazer um gr·fico com as funÁıes mais simples de todas: "seq" e "plot". A primeira, cria uma sequencia de acordo com os par‚metros  e a segunda lista diretamente um gr·fico (padr„o XY).
+- Utilizando RStudio, vamos mostrar como fazer um gr√°fico com as fun√ß√µes mais simples de todas: "seq" e "plot". A primeira, cria uma sequencia de acordo com os par√¢metros  e a segunda lista diretamente um gr√°fico (padr√£o XY).
 
-- Primeiramente, vamos fazer um gr·fico qualquer em R. AtravÈs da funÁ„o seq, geramos uma sequencia de 1 a 20, incrementando de 1 em 1. 
+- Primeiramente, vamos fazer um gr√°fico qualquer em R. Atrav√©s da fun√ß√£o seq, geramos uma sequencia de 1 a 20, incrementando de 1 em 1. 
 
 
 ```r
@@ -43,16 +43,16 @@ plot(x)
 ![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png)
 
 
-- Como chamei a funÁ„o plot com um array de 1 dimens„o, o eixo horizontal assume seus valores como a sua posiÁ„o (ordem) no array. 
+- Como chamei a fun√ß√£o plot com um array de 1 dimens√£o, o eixo horizontal assume seus valores como a sua posi√ß√£o (ordem) no array. 
 
-- A funÁ„o plot lista a sequÍncia. Com estes dois fundamentos vamos demonstrar como modelar segmentos de ondas. 
+- A fun√ß√£o plot lista a sequ√™ncia. Com estes dois fundamentos vamos demonstrar como modelar segmentos de ondas. 
 
 
-### Gr·fico de uma funÁ„o de onda 
+### Gr√°fico de uma fun√ß√£o de onda 
 
-- J· pulando alguns passos, vou fazer o prÛximo gr·fico da funÁ„o seno de x. Como as ondas tem car·ter senoidal, o prÛximo gr·fico j· representa uma onda. 
+- J√° pulando alguns passos, vou fazer o pr√≥ximo gr√°fico da fun√ß√£o seno de x. Como as ondas tem car√°ter senoidal, o pr√≥ximo gr√°fico j√° representa uma onda. 
 
-- Para melhorar a qualidade do gr·fico, eu diminui o incremento da sequencia, ou seja, cada ponto ser· acrescido de 0.1, gerando mais pontos no gr·fico, ou seja, vamos aumentar nossa sequencia x, para um conjunto maior, de 200 elementos. . 
+- Para melhorar a qualidade do gr√°fico, eu diminui o incremento da sequencia, ou seja, cada ponto ser√° acrescido de 0.1, gerando mais pontos no gr√°fico, ou seja, vamos aumentar nossa sequencia x, para um conjunto maior, de 200 elementos. . 
 
 
 ```r
@@ -62,15 +62,15 @@ plot(sin(x))
 
 ![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png)
  
-- Para quem j· tem conhecimento sobre ondas harmÙnicas e alguma coisa sobre R, por aqui j· È suficiente para todo o desenvolvimento restante. Mas vamos no passo a passo. 
+- Para quem j√° tem conhecimento sobre ondas harm√¥nicas e alguma coisa sobre R, por aqui j√° √© suficiente para todo o desenvolvimento restante. Mas vamos no passo a passo. 
 
-- Vemos que o gr·fico acima È equivalente a um pouco mais de trÍs comprimentos de onda. Cada comprimento de onda (lambda) È o tamanho no eixo horizontal onde temos uma repetiÁ„o.
+- Vemos que o gr√°fico acima √© equivalente a um pouco mais de tr√™s comprimentos de onda. Cada comprimento de onda (lambda) √© o tamanho no eixo horizontal onde temos uma repeti√ß√£o.
 
-### Gr·fico com comprimentos de onda inteiros
+### Gr√°fico com comprimentos de onda inteiros
 
 - Iniciando uma sequencia com multiplos de PI
 
-- O primeiro ajuste È iniciar e terminar a sequÍncia de dados com m˙ltiplos de Pi. Lembrando que `sin(n * PI) = 0`. Desta forma o gr·fico fica com comprimentos de onda inteiros. Ainda vemos que o n representa a quantidade de ondas.
+- O primeiro ajuste √© iniciar e terminar a sequ√™ncia de dados com m√∫ltiplos de Pi. Lembrando que `sin(n * PI) = 0`. Desta forma o gr√°fico fica com comprimentos de onda inteiros. Ainda vemos que o n representa a quantidade de ondas.
 
 
 ```r
@@ -82,23 +82,23 @@ abline(v=0)
 
 ![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png)
 
-- Aqui j· temos um segmento de onda, podendo ser a representaÁ„o da fotografia do movimento de uma corda. 
+- Aqui j√° temos um segmento de onda, podendo ser a representa√ß√£o da fotografia do movimento de uma corda. 
 
 ### De ondas simples para ondas complexas
 
 - Na primeira figura, vemos uma onda complexa com dois comprimentos de onda representados. 
 
-- A grande maioria dos sons que ouvimos, das ondas que enxergamos, que utilizamos nas comunicaÁıes, s„o ondas complexas, ou seja, possuem diversos comprimentos de onda e cada comprimento de onda È equivalente a uma frequencia. Estes comprimentos de onda, quando s„o m˙ltiplos s„o chamados comprimentos de ondas harmÙnicos. 
+- A grande maioria dos sons que ouvimos, das ondas que enxergamos, que utilizamos nas comunica√ß√µes, s√£o ondas complexas, ou seja, possuem diversos comprimentos de onda e cada comprimento de onda √© equivalente a uma frequencia. Estes comprimentos de onda, quando s√£o m√∫ltiplos s√£o chamados comprimentos de ondas harm√¥nicos. 
 
 - Criando um vetor de 1 a  4 (diferentes frequencias/comprimentos de onda)
 
-### Listando quatro ondas harmÙnicas no mesmo gr·fico.
+### Listando quatro ondas harm√¥nicas no mesmo gr√°fico.
 
-#### Script para montar v·rios harmÙnicos (ondas com frequencia m˙ltiplas)
+#### Script para montar v√°rios harm√¥nicos (ondas com frequencia m√∫ltiplas)
 
 - Iniciando uma sequencia para representar dois comprimentos de onda.
 
-- Iniciando um vetor com os n˙meros 1 a 4, que ser„o usados como multiplicadores.
+- Iniciando um vetor com os n√∫meros 1 a 4, que ser√£o usados como multiplicadores.
 
 
 ```r
@@ -114,11 +114,11 @@ eixox = c()
 cores = c()
 ```
 
-- A cada loop, a sÈrie incrementa a sÈrie anterior.
+- A cada loop, a s√©rie incrementa a s√©rie anterior.
 
-- o conteudo da sÈrie È sen(x), sen(2x), ... 
+- o conteudo da s√©rie √© sen(x), sen(2x), ... 
 
-- Matematicamente, o que multiplica o X, È a frequÍncia angular (w), sendo f a frequÍncia da onda.
+- Matematicamente, o que multiplica o X, √© a frequ√™ncia angular (w), sendo f a frequ√™ncia da onda.
 
 $$w = 2\pi f$$
     
@@ -132,11 +132,11 @@ for (i in 1:length(harm))
 }
 ```
 
-- Agora a sÈrie contÈm valores de todos os harmÙnicos em sequÍncia. E as cores servem para diferenciar cada harmÙnico.
+- Agora a s√©rie cont√©m valores de todos os harm√¥nicos em sequ√™ncia. E as cores servem para diferenciar cada harm√¥nico.
 
-- Veja que o tamanho da sÈrie È quatro vezes o tamanho original de x, pois o loop realizou quatro voltas. 
+- Veja que o tamanho da s√©rie √© quatro vezes o tamanho original de x, pois o loop realizou quatro voltas. 
 
-- AtravÈs da funÁ„o length() podemos ver o tamanho do vetor x `length(x)` e do vetor sÈrie `length(serie)`
+- Atrav√©s da fun√ß√£o length() podemos ver o tamanho do vetor x `length(x)` e do vetor s√©rie `length(serie)`
 
 
 ```
@@ -154,11 +154,11 @@ dim(sobrepostos)
 ## [1] 5028    2
 ```
 
-- Agora listando todas no mesmo gr·fico. 
+- Agora listando todas no mesmo gr√°fico. 
 
 
 ```r
-title1 <- 'Ondas M˙ltiplas'
+title1 <- 'Ondas M√∫ltiplas'
 
 plot(sobrepostos, cex = 0.2, col=cores, xlab = 'X', ylab = 'y', main = title1)
 abline(h=0)
@@ -177,7 +177,7 @@ serie = sin(x*harm[1])
 eixox = c(x)
 cores = rep(1, length(x))
 
-# ao invÈs de concatenar, agora vamos som·-los.
+# ao inv√©s de concatenar, agora vamos som√°-los.
 
 for (i in 2:length(harm))
 {
@@ -187,9 +187,9 @@ for (i in 2:length(harm))
 ondaunica = matrix( c(eixox, serie), ncol=2)
 ```
 
-- A onda ˙nica È resultado do somatÛrio dos pontos em Y para cada posiÁ„o do eixo x. Veja acima que o vetor eixox n„o sofre alteraÁ„o de uma onda para a outra. 
+- A onda √∫nica √© resultado do somat√≥rio dos pontos em Y para cada posi√ß√£o do eixo x. Veja acima que o vetor eixox n√£o sofre altera√ß√£o de uma onda para a outra. 
 
-- Como estamos trabalhando com somatÛrio, a onda resultante contÈm menos dados, pois ela È o agrupamento das posiÁıes do eixo x atravÈs do somatÛrio das posiÁıes repetidas em Y.
+- Como estamos trabalhando com somat√≥rio, a onda resultante cont√©m menos dados, pois ela √© o agrupamento das posi√ß√µes do eixo x atrav√©s do somat√≥rio das posi√ß√µes repetidas em Y.
 
 
 
@@ -206,7 +206,7 @@ dim(ondaunica)
 
 
 ```r
-title1 <- 'SomatÛrio de Ondas'
+title1 <- 'Somat√≥rio de Ondas'
 
 plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
 abline(h=0)
@@ -216,9 +216,9 @@ abline(h=0)
 
 ### Onda resultante mais 'Natural'
 
-- Na natureza, a produÁ„o de ondas com frequencias multiplas, que d„o origem ‡s notas harmonicas tem origem no fenomeno da reflex„o. Por outro lado, e apesar da conservaÁ„o de energia, a maioria das interaÁıes fÌsicas possuem caracterÌstica da resistÍncia ao movimento, gerando assim uma diminuiÁ„o da energia. Desta forma n„o È estranho pensar que a energia e por consequencia, a amplitude da onda seja menor a cada reflex„o. 
+- Na natureza, a produ√ß√£o de ondas com frequencias multiplas, que d√£o origem √†s notas harmonicas tem origem no fenomeno da reflex√£o. Por outro lado, e apesar da conserva√ß√£o de energia, a maioria das intera√ß√µes f√≠sicas possuem caracter√≠stica da resist√™ncia ao movimento, gerando assim uma diminui√ß√£o da energia. Desta forma n√£o √© estranho pensar que a energia e por consequencia, a amplitude da onda seja menor a cada reflex√£o. 
 
-- Para implementar a amplitude, vamos atribuir pessos a cada uym dos harmÙnicos. Abaixo, o novo array `pesos`, iniciado como `c(100, 80, 80, 60) ` mostra 100% para a primeira frequencia (a fundamental) e um leve decaimento atÈ a quarta frequÍncia. 
+- Para implementar a amplitude, vamos atribuir pessos a cada uym dos harm√¥nicos. Abaixo, o novo array `pesos`, iniciado como `c(100, 80, 80, 60) ` mostra 100% para a primeira frequencia (a fundamental) e um leve decaimento at√© a quarta frequ√™ncia. 
 
 
 ```r
@@ -230,7 +230,7 @@ serie = pesos[1]*sin(x*harm[1])
 eixox = c(x)
 cores = rep(1, length(x))
 
-# ao invÈs de concatenar, agora vamos som·-los.
+# ao inv√©s de concatenar, agora vamos som√°-los.
 
 for (i in 2:length(harm))
 {
@@ -249,13 +249,13 @@ abline(h=0)
 
 ### Onda resultante de instrumentos musicais
 
-- Os instrumentos musicais possuem uma arquitetura corporal e de resson‚ncia que permite a formaÁ„o de diferentes harmÙnicos, o que leva a um **timbre** diferente que permite a diferenciaÁ„o auditiva. Uma mesma nota (frequencia fundamental), emitida por instrumentos diferentes s„o diferentes. Como se explica? 
+- Os instrumentos musicais possuem uma arquitetura corporal e de resson√¢ncia que permite a forma√ß√£o de diferentes harm√¥nicos, o que leva a um **timbre** diferente que permite a diferencia√ß√£o auditiva. Uma mesma nota (frequencia fundamental), emitida por instrumentos diferentes s√£o diferentes. Como se explica? 
 
-- O **timbre** È o prÛprio resultado da distribuiÁ„o harmÙnica, e a nota que identificamos È a **frequÍncia** da onda resultante. Como se pode ver abaixo, apesar de diferentes distribuiÁıes, o comprimento de onda se mantÈm semelhante ao comprimento de onda da nota mais grave, ou seja, a *frequÍncia fundamental*.
+- O **timbre** √© o pr√≥prio resultado da distribui√ß√£o harm√¥nica, e a nota que identificamos √© a **frequ√™ncia** da onda resultante. Como se pode ver abaixo, apesar de diferentes distribui√ß√µes, o comprimento de onda se mant√©m semelhante ao comprimento de onda da nota mais grave, ou seja, a *frequ√™ncia fundamental*.
 
-- Primeiramente vamos aumentar o n˙mero de harmÙnicos sensÌveis para 10 e modular os pesos destes harmÙnicos de forma diferente.
+- Primeiramente vamos aumentar o n√∫mero de harm√¥nicos sens√≠veis para 10 e modular os pesos destes harm√¥nicos de forma diferente.
 
-- Depois, estes pesos diferentes ser„o aplicados a cada uma das ondas antes de som·-las, trazendo assim a caracterÌstica de amplitudes diferentes para cada m˙ltiplo.
+- Depois, estes pesos diferentes ser√£o aplicados a cada uma das ondas antes de som√°-las, trazendo assim a caracter√≠stica de amplitudes diferentes para cada m√∫ltiplo.
 
 
 
@@ -270,14 +270,14 @@ pesos3<- c(100,  0,   0,  70,   0,   0,  40,   0,   0,  10 )
 pesos4<- c(100,  0,   0,   0,  60,   0,   0,   0,  20,   0 ) 
 pesos5<- c(100,  0,   0,   0,   0,  50,   0,   0,   0,   0 ) 
 pesos6<- c(100,  0, 100,   0, 100,   0, 100,   0, 100,   0 ) 
-#Instrumentos de sopro com comportamento anÙmalo, com pedal no terceiro ou quinto harmonico
+#Instrumentos de sopro com comportamento an√¥malo, com pedal no terceiro ou quinto harmonico
 pesos7<- c( 50, 60, 100,  90,  70,  60,   0,   0,   0,   0 ) 
 pesos8<- c( 60, 70,  80,  90, 100,  90, 80,  70,   60,  50 ) 
 pesos9<- c( 0,100, 100, 0,   0, 0,  0,  0,   0,  0 ) 
 
 for (instru in 1:9) {
   
-    # Em cada loop, assume um tipo de distribuiÁ„o de pesos de cada harmÙnico
+    # Em cada loop, assume um tipo de distribui√ß√£o de pesos de cada harm√¥nico
     if(instru==2) {pesos <- pesos2}
     if(instru==3) {pesos <- pesos3}
     if(instru==4) {pesos <- pesos4}
@@ -292,7 +292,7 @@ for (instru in 1:9) {
     eixox = c(x)
     cores = rep(1, length(x))
     
-    # ao invÈs de concatenar, agora vamos som·-los.
+    # ao inv√©s de concatenar, agora vamos som√°-los.
     
     for (i in 2:length(harm))
     {
@@ -302,7 +302,7 @@ for (instru in 1:9) {
     ondaunica = matrix( c(eixox, serie), ncol=2)
     
     
-    title1 <- paste('Onda Resultante: ( SimulaÁ„o' , instru , ')' ) 
+    title1 <- paste('Onda Resultante: ( Simula√ß√£o' , instru , ')' ) 
     
     plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
     abline(h=0)
@@ -313,11 +313,11 @@ for (instru in 1:9) {
 
 ### Batimento 
 
-- O batimento È o resultado do somatÛrio de duas ondas com frequÍncias semelhantes. A CaracterÌstica do batimento È escutarmos a mÈdia entre as frequencias e simultaneamente escutamos uma frequencia muito baixa, resultado da oscilaÁ„o da amplitude, dando a sensaÁ„o do som que aumenta e diminui.
+- O batimento √© o resultado do somat√≥rio de duas ondas com frequ√™ncias semelhantes. A Caracter√≠stica do batimento √© escutarmos a m√©dia entre as frequencias e simultaneamente escutamos uma frequencia muito baixa, resultado da oscila√ß√£o da amplitude, dando a sensa√ß√£o do som que aumenta e diminui.
 
-- … muito comum ao afinar instrumentos de corda que este batimento sirva de referÍncia para a afinaÁ„o, ou seja, ao parar de escutar o batimento, se sabe que as duas frequencia est„o iguais.
+- √â muito comum ao afinar instrumentos de corda que este batimento sirva de refer√™ncia para a afina√ß√£o, ou seja, ao parar de escutar o batimento, se sabe que as duas frequencia est√£o iguais.
 
-- Abaixo uma amostra (com 16 comprimentos de onda), onde as frequencias base s„o: $$f1=4\pi,  f2=4.1\pi$$. A frequencia resultante ser· a mÈdia, e uma frequÍncia mais baixa (maior comprimento de onda) do batimento: $$fm=4.05\pi, fb=0.1\pi$$
+- Abaixo uma amostra (com 16 comprimentos de onda), onde as frequencias base s√£o: $$f1=4\pi,  f2=4.1\pi$$. A frequencia resultante ser√° a m√©dia, e uma frequ√™ncia mais baixa (maior comprimento de onda) do batimento: $$fm=4.05\pi, fb=0.1\pi$$
 
 
 - 
@@ -351,7 +351,7 @@ for(nBat in c(2,3,3) )
 ![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-1.png)![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-2.png)
 
 ```r
-# Ultimo gr·fico, traÁar a curva do batimento
+# Ultimo gr√°fico, tra√ßar a curva do batimento
 serie = serie + sin(x* 0.1 * pi)
 
 plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
