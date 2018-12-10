@@ -7,7 +7,7 @@ output:
 ## Tópico: Somatório de ondas harmônicas.
 
 
-![plot of Batimento](images/Batimento1.png)
+![plot of chunk unnamed-chunk-17](images/Batimento1.png)
 
 
 **Resumo:** Através deste trabalho mostro como trabalhar várias funções e como implementar técnicas rápidas e simples de programação, utilizando a linguaguem R, e ao mesmo tempo dando uma noção de como formar ondas harmônicas através de dados e ao final produzindo gráficos que mostram o comportamento destas ondas.
@@ -40,7 +40,7 @@ x
 plot(x)
 ```
 
-![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png)
+![plot of chunk unnamed-chunk-18](images/Plot1.png)
 
 
 - Como chamei a função plot com um array de 1 dimensão, o eixo horizontal assume seus valores como a sua posição (ordem) no array. 
@@ -60,7 +60,7 @@ x = seq(0,20, 0.1)
 plot(sin(x))
 ```
 
-![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png)
+![plot of chunk unnamed-chunk-19](images/PlotSen1.png)
  
 - Para quem já tem conhecimento sobre ondas harmônicas e alguma coisa sobre R, por aqui já é suficiente para todo o desenvolvimento restante. Mas vamos no passo a passo. 
 
@@ -80,7 +80,7 @@ abline(h=0)
 abline(v=0)
 ```
 
-![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png)
+![plot of chunk unnamed-chunk-20](images/PlotSen2.png)
 
 - Aqui já temos um segmento de onda, podendo ser a representação da fotografia do movimento de uma corda. 
 
@@ -164,7 +164,7 @@ plot(sobrepostos, cex = 0.2, col=cores, xlab = 'X', ylab = 'y', main = title1)
 abline(h=0)
 ```
 
-![plot of chunk unnamed-chunk-26](figure/unnamed-chunk-26-1.png)
+![plot of chunk unnamed-chunk-26](images/PlotMix1.png)
 
 ### Onda resultante (unificar as quatro ondas)
 
@@ -212,7 +212,7 @@ plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
 abline(h=0)
 ```
 
-![plot of chunk unnamed-chunk-29](figure/unnamed-chunk-29-1.png)
+![plot of chunk unnamed-chunk-29](images/PlotHarm1.png)
 
 ### Onda resultante mais 'Natural'
 
@@ -245,7 +245,7 @@ plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
 abline(h=0)
 ```
 
-![plot of chunk unnamed-chunk-30](figure/unnamed-chunk-30-1.png)
+![plot of chunk unnamed-chunk-30](images/PlotHarm2.png)
 
 ### Onda resultante de instrumentos musicais
 
@@ -309,7 +309,15 @@ for (instru in 1:9) {
 }
 ```
 
-![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-1.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-2.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-3.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-4.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-5.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-6.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-7.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-8.png)![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-9.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim1.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim2.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim3.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim4.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim5.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim6.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim7.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim8.png)
+![plot of chunk unnamed-chunk-31](images/PlotSim9.png)
 
 ### Batimento 
 
@@ -348,7 +356,8 @@ for(nBat in c(2,3,3) )
 }
 ```
 
-![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-1.png)![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-2.png)
+![plot of chunk unnamed-chunk-32](images/PlotBat2.png)
+![plot of chunk unnamed-chunk-32](images/PlotBat3.png)
 
 ```r
 # Ultimo gráfico, traçar a curva do batimento
@@ -357,4 +366,4 @@ serie = serie + sin(x* 0.1 * pi)
 plot(ondaunica, cex = 0.2, xlab = 'X', ylab = 'y', main = title1)
 ```
 
-![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-3.png)
+![plot of chunk unnamed-chunk-32](images/PlotBat4.png)
