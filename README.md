@@ -24,7 +24,7 @@ output:
 - Primeiramente, vamos fazer um gráfico qualquer em R. Através da função seq, geramos uma sequencia de 1 a 20, incrementando de 1 em 1. 
 
 
-```r
+```r 
 # Atribuindo uma sequencia de 0 a 20
 x = seq(0,20, 1)
 # Listando a sequencia 
